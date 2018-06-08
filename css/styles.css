@@ -1,0 +1,219 @@
+/*---------------------------------------------------
+ 	Projekt IET Technikerschule CSS Stylesheet Tobias Tillmanns
+----------------------------------------------------*/
+
+/* Grundeinstellungen für die Seite */
+html,
+body
+{
+    margin: 0;
+    padding: 0;
+}
+/* Festlegen des Hintergrundbilds mit Einstellungen */
+body
+{
+    background-image: url(../images/hintergrund.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: top;
+    background-size: cover;
+}
+/* Design des Headers */
+header
+{
+	/* Einstellungen der Abstände */
+    margin-bottom: 40px;
+    padding: 15px 25px;
+	/* Hintergrundfarbe und Rahmen */
+    border-bottom: 1px solid #ff9500;
+    background-color: #f7f7f7;
+}
+/* 
+Flex-Container für Navigation definieren; 
+Hiermit werden die Inhalte der Navigation nicht absolut positioniert;
+Bewirkt, dass die Navigationspunkte nebeneinander stehen;
+*/
+nav ul
+{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	/* Abstände auf 0 setzen */
+    margin: 0;
+}
+/* Gestaltung der Navigationspunkte */
+nav ul li
+{
+	/* Abstand oben und unten */
+    padding: 10px 0px;
+	/* Abstand links und rechts */
+    margin: 0px 20px;
+	/* Entfernen der Aufzählungspunkte */
+    list-style: none;
+	/* Inhalt zentrieren */
+    justify-content: center;
+	align-items: center;
+}
+/* Entfernen des Rahmens für das erste Element der Liste */
+nav ul li:first-child
+{
+    border-left: none;
+}
+/* Gestaltung der Links in der Navigation */
+nav ul a
+{
+    font: normal 25px 'Open Sans', sans-serif;
+    color: #ff9500;
+    text-decoration: none;
+}
+/* Gestaltung für den aktuell aktiven Navigationspunkt */
+nav ul a.active
+{
+    font: normal 25px 'Open Sans', sans-serif;
+    text-decoration: underline;
+    color: #ff9500;
+}
+/* Definieren des Hauptinhalts */
+main
+{
+	/* Festlegen der Hintergrundfarbe */
+    background-color: rgba(255,255,255,.7);
+}
+/* 
+Flex-Container für Hauptinhalt definieren; 
+Die Inhalte der Sektionen werden nicht abosulte Positionierung;
+Die unterschiedlichen Sektionen stehen nicht nebeneinander;
+*/
+section
+{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    columns: 100% 1;
+	/* Abstände */
+    padding: 10px 100px;
+}
+/* Festlegen der Schriftgröße, Schriftart, Schriftfarbe und Abstände für Überschrift 1 */
+h1
+{
+    font: bold 60px 'Open Sans', sans-serif;
+    text-align: center;
+    color: #ff9500;
+
+    margin-bottom: 15px;
+}
+/* Festlegen der Schriftgröße, Schriftart, Schriftfarbe und Abstände für Überschrift 2 */
+h2
+{
+    font: normal 35pt 'Open Sans', sans-serif;
+    text-align: center;
+    color: #000;
+
+    margin-bottom: 10px;
+}
+/* Festlegen der Schriftgröße, Schriftart, Schriftfarbe und Abstände für Überschrift 3 */
+h3
+{
+    font: normal 25pt 'Open Sans', sans-serif;
+    text-align: center;
+    color: #000;
+
+    margin-bottom: 10px;
+}
+/* Gestaltung der Trennlinie */
+hr
+{
+    width: 160px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    border: 3px dashed #ff9500;
+}
+/* Anpassen der Überschrift h3 im Bereich 'companies' */
+.companies h3
+{
+    width: 100%;
+}
+/* 
+Flex-Container für Firmenlogos definieren; 
+*/
+.companies a
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    padding: 20px 0;
+}
+/* Maximale Größe der Firmenlogos auf 100% beschränken */
+.companies picture img
+{
+    max-width: 100%;
+}
+/* 
+Flex-Container für 'introduction' definieren; 
+*/
+.introduction
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    columns: 50% 2;
+	/* Abstände */
+    padding: 20px 0;
+}
+/* Abstände für Spalten einstellen */
+.introduction div
+{
+    padding: 20px;
+}
+/* Maximale Größe der Bilder auf 100% beschränken */
+.introduction .image picture img
+{
+    max-width: 100%;
+}
+/* Festlegen der Schriftgröße und Schriftart für die Klasse 'textblock' */
+.introduction .textblock
+{
+    font: normal 20pt 'Open Sans', sans-serif;
+}
+
+/* Anpassungen für max 950 Pixel */
+
+@media all and (max-width: 950px)
+{
+    .companies a
+    {
+        width: 100%;
+    }
+
+    h2 {
+    	font: normal 30pt 'Open Sans', sans-serif;
+    }
+}
+
+/* Anpassungen für max 600 Pixel */
+
+@media all and (max-width: 600px)
+{
+	h1
+	{
+	    font: bold 35px 'Open Sans', sans-serif;
+	}
+
+	h2
+	{
+	    font: normal 20pt 'Open Sans', sans-serif;
+	}
+
+	h3
+	{
+	    font: normal 15pt 'Open Sans', sans-serif;
+	}
+	.introduction .textblock
+	{
+	    font: normal 15pt 'Open Sans', sans-serif;
+	}
+
+}
